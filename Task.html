@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move color blocks clockwise/anticlockwise on click events</title>
+    <style>
+        h1 {
+            color: red;
+            text-align: left;
+        }
+        .main-section {
+            height: 500px;
+            width: 800px;
+        }
+
+        .main-section .row {
+            width: 100%;
+            height: calc(100% / 3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 10px;
+        }
+
+        .btn:first-child {
+            margin-right: 10px;
+        }
+
+        .block {
+            height: 100%;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row.center {
+            justify-content: center;
+        }
+
+        #block1 {
+            background-color: red;
+        }
+
+        #block2 {
+            background-color: yellow;
+        }
+
+        #block3 {
+            background-color: green;
+        }
+        
+        #block4 {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Move color blocks clockwise/anticlockwise on click events</h2>
+    <div class="main-section">
+        <div class="row">
+            <div id="block1" style="background-color: red;" class="block">1</div>
+            <div id="block2" class="block">2</div>
+        </div>
+        <div class="row center">
+            <button class="btn" onclick="ChangeColorAntiClockwise()">Anti-clockwise</button>
+            <button class="btn" onclick="ChangeColorClockwise()">Clockwise</button>
+        </div>
+        <div class="row">
+            <div id="block4" class="block">4</div>
+            <div id="block3" class="block">3</div>
+        </div>
+    </div>
+    <h1>Developer Name:MR.Nikhil Tekade</h1>
+    <script>
+
+        function ChangeColorAntiClockwise(){
+            var block1 = document.getElementById("block1");
+            console.log(block1.style.backgroundColor);
+                if(block1.style.backgroundColor == "red"){
+                    document.getElementById("block1").style.backgroundColor = "yellow";
+                    document.getElementById("block2").style.backgroundColor = "green";
+                    document.getElementById("block3").style.backgroundColor = "orange";
+                    document.getElementById("block4").style.backgroundColor = "red";
+                } else if(block1.style.backgroundColor == "yellow") {
+                    document.getElementById("block1").style.backgroundColor = "green";
+                    document.getElementById("block2").style.backgroundColor = "orange";
+                    document.getElementById("block3").style.backgroundColor = "red";
+                    document.getElementById("block4").style.backgroundColor = "yellow";
+                } else if(block1.style.backgroundColor == "green") {
+                    document.getElementById("block1").style.backgroundColor = "orange";
+                    document.getElementById("block2").style.backgroundColor = "red";
+                    document.getElementById("block3").style.backgroundColor = "yellow";
+                    document.getElementById("block4").style.backgroundColor = "green";
+                } else if(block1.style.backgroundColor == "orange"){
+                    document.getElementById("block1").style.backgroundColor = "red";
+                    document.getElementById("block2").style.backgroundColor = "yellow";
+                    document.getElementById("block3").style.backgroundColor = "green";
+                    document.getElementById("block4").style.backgroundColor = "orange";
+                }
+        }
+
+        function ChangeColorClockwise(){
+            var block1 = document.getElementById("block1");
+            console.log(block1.style.backgroundColor);
+                if(block1.style.backgroundColor == "red"){
+                    document.getElementById("block1").style.backgroundColor = "orange";
+                    document.getElementById("block2").style.backgroundColor = "red";
+                    document.getElementById("block3").style.backgroundColor = "yellow";
+                    document.getElementById("block4").style.backgroundColor = "green";
+                } else if(block1.style.backgroundColor == "orange") {
+                    document.getElementById("block1").style.backgroundColor = "green";
+                    document.getElementById("block2").style.backgroundColor = "orange";
+                    document.getElementById("block3").style.backgroundColor = "red";
+                    document.getElementById("block4").style.backgroundColor = "yellow";
+                } else if(block1.style.backgroundColor == "green") {
+                    document.getElementById("block1").style.backgroundColor = "yellow";
+                    document.getElementById("block2").style.backgroundColor = "green";
+                    document.getElementById("block3").style.backgroundColor = "orange";
+                    document.getElementById("block4").style.backgroundColor = "red";
+                } else if(block1.style.backgroundColor == "yellow"){
+                    document.getElementById("block1").style.backgroundColor = "red";
+                    document.getElementById("block2").style.backgroundColor = "yellow";
+                    document.getElementById("block3").style.backgroundColor = "green";
+                    document.getElementById("block4").style.backgroundColor = "orange";
+                }
+        }
+    </script>
+</body>
+
+</html>
